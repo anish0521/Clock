@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Using Pure JS</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <div class="clockcontainer">
+        <div class="point"></div>
+        <div class="hour hour1">1</div>
+        <div class="hour hour2">2</div>
+        <div class="hour hour3">3</div>
+        <div class="hour hour4">4</div>
+        <div class="hour hour5">5</div>
+        <div class="hour hour6">6</div>
+        <div class="hour hour7">7</div>
+        <div class="hour hour8">8</div>
+        <div class="hour hour9">9</div>
+        <div class="hour hour10">10</div>
+        <div class="hour hour11">11</div>
+        <div class="hour hour12">12</div>
+        <div class="brand">AJANTA</div>
+        <div class="minute-hand-wrapper" id="minutehand" >
+            <div class="minute-hand" >
+                <div class="hand"></div>
+                <div class="arrow">V</div>
+                
+            </div>
+        </div>
+        <div class="hour-hand-wrapper" id="hourhand" >
+            <div class="hour-hand" >
+                <div class="hand"></div>
+                <div class="arrow">V</div>
+                
+            </div>
+        </div>
+        <div class="second-hand-wrapper" id="secondhand" >
+            <div class="second-hand" >
+                <div class="hand"></div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">let hr=document.getElementById('hourhand');
+    let min=document.getElementById('minutehand');
+    let sec=document.getElementById('secondhand');
+    function displaytime(){
+     let date=new Date();
+     let h=date.getHours();
+     let m=date.getMinutes();
+     let s=date.getSeconds();
+    
+     let hrotation=30*h+m/2;
+     let mrotation=6*m;
+     let srotation=6*s;
+    
+     hr.style.transform=`rotate(${hrotation}deg)`;
+     min.style.transform=`rotate(${mrotation}deg)`;
+     sec.style.transform=`rotate(${srotation}deg)`;
+    }
+    setInterval(displaytime,1000);
+    </script>
+</body>
+</html>
